@@ -31,6 +31,10 @@ target/
 *.ipr
 .idea/
 
+# VSCODE project files
+.vscode
+
+
 # eclipse project file
 .settings/
 .classpath
