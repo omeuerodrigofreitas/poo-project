@@ -36,7 +36,7 @@ public class App
          + " o construtor default: " + minhaConta.getNomeProprietario());
 
          System.out.println("Cara essa conta foi criada com"
-         + " o construtor sobrecarregada: " + minhaContaSobrecarregada.getNomeProprietario());
+         + " o construtor sobrecarregado: " + minhaContaSobrecarregada.getNomeProprietario());
 
     }
 }
