@@ -1,7 +1,6 @@
 package br.com.ifsul.poo;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 import br.com.ifsul.poo.model.Conta;
 
