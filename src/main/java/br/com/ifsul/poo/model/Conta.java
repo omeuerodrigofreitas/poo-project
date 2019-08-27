@@ -1,26 +1,40 @@
 package br.com.ifsul.poo.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Conta {
 
-    int numero;
-    int agencia;
-    String nomeProprietario;
-    BigDecimal saldo;
+    private int numero;
+    private int agencia;
+    private BigDecimal saldo;
+    private String tipoConta;
+    private LocalDate dataAniversario;
+    private Pessoa proprietario;
+    private Pessoa gerente;
 
     // Contrutor vazio tambem chamado de
     // construtor default
-    public Conta() {
+    // deixamos esse como protected para nao ter acesso
+    // fora do escopo da nossa classe conta
+    // (OBS. é possivel acessar, mas via de regra não)
+    protected Conta() {
+    }
+
+    // Construtur sobrecarregado, pois nao faz sentido termos uma conta sem
+    // proprietario, esse será o construtor onde o programador poderá
+    // criar instacias da classe conta
+    public Conta(Pessoa proprietario) {
+        this.proprietario = proprietario;
     }
 
     // Contrutor sobrecarregado onde passamos parametros
     // para ser contruido um objeto com valores
-    public Conta(int numero, int agencia, String nomeProprietario, BigDecimal saldo) {
+    public Conta(int numero, int agencia, BigDecimal saldo, Pessoa proprietario) {
         this.numero = numero;
         this.agencia = agencia;
-        this.nomeProprietario = nomeProprietario;
         this.saldo = saldo;
+        this.proprietario = proprietario;
     }
 
     // Abaixo getters e Setters, sao metodos que servem
@@ -42,13 +56,7 @@ public class Conta {
         this.agencia = agencia;
     }
 
-    public String getNomeProprietario() {
-        return nomeProprietario;
-    }
 
-    public void setNomeProprietario(String nomeProprietario) {
-        this.nomeProprietario = nomeProprietario;
-    }
 
     public BigDecimal getSaldo() {
         return this.saldo;
@@ -56,6 +64,38 @@ public class Conta {
 
     public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
+    }
+
+    public LocalDate getDataAniversario() {
+        return dataAniversario;
+    }
+
+    public void setDataAniversario(LocalDate dataAniversario) {
+        this.dataAniversario = dataAniversario;
+    }
+
+    public String getTipoConta() {
+        return tipoConta;
+    }
+
+    public void setTipoConta(String tipoConta) {
+        this.tipoConta = tipoConta;
+    }
+
+    public Pessoa getProprietario() {
+        return this.proprietario;
+    }
+
+    public void setProprietario(Pessoa proprietario) {
+        this.proprietario = proprietario;
+    }
+
+    public Pessoa getGerente() {
+        return this.gerente;
+    }
+
+    public void setGerente(Pessoa gerente) {
+        this.gerente = gerente;
     }
 
 }
